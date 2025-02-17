@@ -1,6 +1,7 @@
 package login;
 
 import base.BaseTests;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
@@ -14,5 +15,7 @@ public class LoginTests extends BaseTests {
         loginPage.setUsernameField("tomsmith");
         loginPage.setPasswordField("SuperSecretPassword!");
         SecureAreaPage secureAreaPage = loginPage.clickLoginButton();
+
+        Assert.assertTrue(secureAreaPage.getAlertStatus().contains("You logged into a secure area"), "Missing alert status");
     }
 }
