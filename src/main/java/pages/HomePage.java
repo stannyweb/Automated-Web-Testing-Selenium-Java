@@ -36,6 +36,11 @@ public class HomePage {
         return new KeyPressPage(driver);
     }
 
+    public HorizontalSlidePage clickHorizontalSlide() {
+        clickLinks("Horizontal Slider");
+        return new HorizontalSlidePage(driver);
+    }
+
     private void clickLinks(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
