@@ -56,6 +56,11 @@ public class HomePage {
         return new ContextPage(driver);
     }
 
+    public WysiwigEditorPage clickWysiwigEditorPage() {
+        clickLinks("WYSIWYG Editor");
+        return new WysiwigEditorPage(driver);
+    }
+
     private void clickLinks(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
