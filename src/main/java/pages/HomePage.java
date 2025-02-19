@@ -61,6 +61,11 @@ public class HomePage {
         return new WysiwigEditorPage(driver);
     }
 
+    public NestedFramesPage clickNestedFrames() {
+        clickLinks("Nested Frames");
+        return new NestedFramesPage(driver);
+    }
+
     private void clickLinks(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
