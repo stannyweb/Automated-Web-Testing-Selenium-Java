@@ -51,6 +51,11 @@ public class HomePage {
         return new FileUploadPage(driver);
     }
 
+    public ContextPage clickContextPage() {
+        clickLinks("Context Menu");
+        return new ContextPage(driver);
+    }
+
     private void clickLinks(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
