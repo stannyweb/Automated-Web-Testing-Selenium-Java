@@ -42,4 +42,11 @@ public class WindowManager {
         }
         System.out.println("No tab found with name " + expectedTitle);
     }
+
+    public void switchToNewTab() {
+        Set<String> windowHandles = driver.getWindowHandles();
+
+//        windowHandles.forEach(window -> driver.switchTo().window(window));
+        windowHandles.forEach(driver.switchTo()::window);
+    }
 }

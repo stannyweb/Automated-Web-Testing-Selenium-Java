@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Set;
 
 public class DynamicLoadingExample2 {
     private WebDriver driver;
@@ -25,6 +26,10 @@ public class DynamicLoadingExample2 {
     public String getLoadedText() {
         return driver.findElement(loadedText).getText();
 
+    }
+
+    public boolean isButtonDisplayed() {
+        return driver.findElement(startButton).isDisplayed();
     }
 
 }
