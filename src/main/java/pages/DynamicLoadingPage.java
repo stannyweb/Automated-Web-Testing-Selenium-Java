@@ -21,4 +21,6 @@ public class DynamicLoadingPage {
         driver.findElement(example2).click();
         return new DynamicLoadingExample2(driver);
     }
+
+
 }
