@@ -1,12 +1,16 @@
 package base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
+import utils.CookieManager;
+import utils.MyEventListener;
 import utils.WindowManager;
 
 public class BaseTests {
@@ -18,8 +22,12 @@ public class BaseTests {
         WebDriverManager.chromedriver().setup();
 
         driver = new ChromeDriver();
+        MyEventListener myEventListener = new MyEventListener();
+        driver = new EventFiringDecorator<>(myEventListener).decorate(driver);
+
         driver.get("https://the-internet.herokuapp.com/");
         goHome();
+
         homePage = new HomePage(driver);
     }
 
@@ -38,4 +46,10 @@ public class BaseTests {
     public WindowManager getWindowManager() {
         return new WindowManager(driver);
     }
+
+    public CookieManager getCookieManager() {
+        return new CookieManager(driver);
+    }
+
+
 }
