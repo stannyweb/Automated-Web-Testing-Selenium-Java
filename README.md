@@ -9,7 +9,7 @@ It serves as a practical example for learning and implementing automated tests f
 
 ## Features
 
-The automated tests in this repository cover the following elements and functionalities on the-internet.herokuapp.com website:
+The automated tests in this repository cover the following elements and functionalities on the-internet.herokuapp.com website
 
 *   **Login Functionality:** Tests related to user login and authentication processes.
 *   **Forgot Password:** Tests for the "Forgot Password" functionality, ensuring password recovery mechanisms are working correctly.
